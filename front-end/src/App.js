@@ -2,11 +2,13 @@ import React from 'react';
 
 import Header from './components/Header.js';
 
-export default function App(){
+function App(){
   return (
             <>
-              <Header />
-              <Header />
+              <Header title="Homepage"/>
+              <Header title="Projects"/>
             </>
           );
 }
+
+export default App;
