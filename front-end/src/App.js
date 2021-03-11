@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 
+import "./App.css";
+
 import Header from './components/Header.js';
 
 function App(){
   const [projects, setProjects] = useState(['Desenvolvimento de app',  'Front-end web']);
   
   function handleAddProject(){
-    
+
     setProjects([ ... projects , `Novo Projeto ${Date.now()}`]);
 
     console.log(projects);
