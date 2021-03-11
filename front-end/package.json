@@ -10,6 +10,7 @@
   "dependencies": {
     "@babel/cli": "^7.13.0",
     "@babel/preset-react": "^7.12.13",
+    "axios": "^0.21.1",
     "css-loader": "^5.1.2",
     "file-loader": "^6.2.0",
     "react": "^17.0.1",
