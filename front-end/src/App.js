@@ -15,11 +15,17 @@ function App(){
     });
   }, []);
 
-  function handleAddProject(){
+  async function handleAddProject(){
 
-    setProjects([ ... projects , `Novo Projeto ${Date.now()}`]);
+    const response = await api.post('projects', {
+      title: `Front-end com ReactJS ${Date.now()}` ,
+      owner: "João Ricardo"
+    });
 
-    console.log(projects);
+    const project = response.data;
+
+    setProjects([ ... projects, project]);
+    
   }
   
   return (
