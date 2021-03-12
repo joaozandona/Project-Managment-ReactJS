@@ -16,10 +16,12 @@ function App(){
   }, []);
 
   async function handleAddProject(){
+    const title1 = document.getElementById('projectName').value;
+    const owner1  = document.getElementById('projectOwner').value;
 
     const response = await api.post('projects', {
-      title: `Front-end com ReactJS ${Date.now()}` ,
-      owner: "João Ricardo"
+      title: `${title1}` ,
+      owner: `${owner1}`
     });
 
     const project = response.data;
@@ -33,7 +35,10 @@ function App(){
               <Header title="Homepage"/>
                 <ul>
                   {projects.map(project => <li key={project.id}>{project.title}</li>)}
-
+                  <label>Nome do projeto:</label>
+                  <input type="text" id="projectName" name="projectName"/>
+                  <label>Dono do projeto:</label>
+                  <input type="text" id="projectOwner" name="projectOwner"/>
                   <button type="button" onClick= {handleAddProject}>Adicionar Projeto</button>
                 </ul>
             </>
